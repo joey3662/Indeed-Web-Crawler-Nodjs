@@ -1,0 +1,17 @@
+{
+  "name": "web-scraping",
+  "version": "1.0.0",
+  "description": "Web Crawler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joey Cheng",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "fs": "0.0.1-security",
+    "puppeteer": "^5.5.0"
+  }
+}
