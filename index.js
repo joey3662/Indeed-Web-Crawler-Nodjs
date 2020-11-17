@@ -8,7 +8,7 @@ const dburl = "mongodb://localhost:27017/";
 
 /////////////////////////////////////////////////////////////
 
-const url = "https://ca.indeed.com/jobs?q=software+developer&l=Toronto%2C+ON&radius=50";
+const url = "https://ca.indeed.com/jobs?q=Engineer&l=Surrey%2C+BC";
 
 (async () => {
     const browser = await puppeteer.launch({headless: false})
@@ -56,6 +56,7 @@ const url = "https://ca.indeed.com/jobs?q=software+developer&l=Toronto%2C+ON&rad
     MongoClient.connect(dburl, function(err, db) {
       if (err) throw err;
       var dbo = db.db("jobDB");
+      dbo.collection("jds").deleteMany({})
       dbo.collection("jds").insertMany(result, function(err, res) {
         if (err) throw err;
         console.log("Number of documents inserted: " + res.insertedCount);
